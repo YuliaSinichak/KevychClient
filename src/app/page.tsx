@@ -7,7 +7,9 @@ import SearchRoutes from "@/components/SearchRoutesForm";
 import { useSearch } from "@/hooks/useSearch";
 
 async function getRoutes(): Promise<Route[]> {
-  const res = await fetch("http://localhost:5000/route/routes");
+  const res = await fetch(
+    "https://kevych-49a723d13d60.herokuapp.com/route/routes"
+  );
   const data = await res.json();
   return data;
 }
