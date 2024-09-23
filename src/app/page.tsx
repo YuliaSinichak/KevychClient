@@ -32,7 +32,7 @@ export default function Page() {
         const results = await search.mutateAsync({
           departureStation: searchCriteria.departureStation || "",
           arrivalStation: searchCriteria.arrivalStation || "",
-          departureDate: searchCriteria.departureDate || new Date(),
+          departureDate: new Date(searchCriteria.departureDate || new Date()),
         });
         setData(results);
       } else {
