@@ -38,7 +38,7 @@ interface SearchRoutesProps {
   onSearch: (criteria: {
     departureStation?: string;
     arrivalStation?: string;
-    departureDate?: string;
+    departureDate?: Date;
   }) => void;
 }
 
@@ -52,7 +52,7 @@ export default function SearchRoutes({ onSearch }: SearchRoutesProps) {
     onSearch({
       departureStation: data.departureStation,
       arrivalStation: data.arrivalStation,
-      departureDate: data.departureDate,
+      departureDate: new Date(data.departureDate),
     });
   };
 

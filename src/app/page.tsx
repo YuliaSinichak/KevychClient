@@ -19,7 +19,7 @@ export default function Page() {
   const [searchCriteria, setSearchCriteria] = useState<{
     departureStation?: string;
     arrivalStation?: string;
-    departureDate?: string;
+    departureDate?: Date;
   }>({});
 
   const { search } = useSearch();
@@ -34,7 +34,7 @@ export default function Page() {
         const results = await search.mutateAsync({
           departureStation: searchCriteria.departureStation || "",
           arrivalStation: searchCriteria.arrivalStation || "",
-          departureDate: new Date(searchCriteria.departureDate || new Date()),
+          departureDate: searchCriteria.departureDate || new Date(),
         });
         setData(results);
       } else {
@@ -55,7 +55,7 @@ export default function Page() {
   const handleSearch = (criteria: {
     departureStation?: string;
     arrivalStation?: string;
-    departureDate?: string;
+    departureDate?: Date;
   }) => {
     setSearchCriteria(criteria);
   };
