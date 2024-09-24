@@ -6,12 +6,13 @@ import axios from "axios";
 
 export const loginFn = async (authData: LoginReq) => {
   const response = await appApi.post<LoginRes>("/auth/login", authData);
+  console.log(response.data);
   return response.data;
 };
 
 export const refreshAccessTokenFn = async () => {
   const response = await axios.get<LoginRes>(
-    "https://kevych-49a723d13d60.herokuapp.com/auth/login/access-token"
+    "http://localhost:5000/auth/login/access-token"
   );
   return response.data;
 };

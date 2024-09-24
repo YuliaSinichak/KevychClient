@@ -1,7 +1,7 @@
 import axios from "axios";
 import { refreshAccessTokenFn } from "./auth.service.api";
 
-const API_URL = "https://kevych-49a723d13d60.herokuapp.com";
+const API_URL = "http://localhost:5000";
 
 export const appApi = axios.create({
   baseURL: API_URL,
